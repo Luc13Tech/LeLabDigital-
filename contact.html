@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | LeLabDigital</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
+</head><body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">💡</div><span class="logo-text">LeLab<span class="logo-accent">Digital</span></span></a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link" data-i18n="nav_home">Accueil</a>
+        <a href="services.html" class="nav-link" data-i18n="nav_services">Nos Services</a>
+        <a href="finance.html" class="nav-link" data-i18n="nav_finance">Finance</a>
+        <a href="blog.html" class="nav-link" data-i18n="nav_blog">Blog</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="settings.html" class="btn btn-ghost btn-sm">⚙️</a>
+        <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login-btn" data-i18n="nav_login">Connexion</a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="nav-register-btn" data-i18n="nav_register">S'inscrire</a>
+        <div class="nav-user" id="nav-logout-btn" style="display:none;"><div class="nav-avatar" id="nav-avatar">U</div><span id="nav-user-name" style="font-size:.85rem;font-weight:600;"></span><button onclick="logout()" class="btn btn-danger btn-sm" data-i18n="nav_logout">Déconnexion</button></div>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('active');">✕</button>
+    <a href="../index.html" class="nav-link">Accueil</a>
+    <a href="services.html" class="nav-link">Nos Services</a>
+    <a href="finance.html" class="nav-link">Finance</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="settings.html" class="nav-link">Paramètres</a>
+    <a href="login.html" class="btn btn-ghost">Connexion</a>
+    <a href="register.html" class="btn btn-primary">S'inscrire</a>
+  </div>
+  <section class="page-hero"><div class="container">
+    <span class="badge">📬 Contact</span>
+    <h1 style="margin:.75rem 0 1rem;" data-i18n="contact_title">Contactez-nous</h1>
+    <p data-i18n="contact_sub">Parlons de votre projet. Notre équipe vous répond dans les 24h via WhatsApp.</p>
+  </div></section>
+  <section class="section" style="background:var(--navy);">
+    <div class="container contact-inner">
+      <div class="contact-info slide-left">
+        <h3 style="margin-bottom:1.5rem;">Nos coordonnées</h3>
+        <div class="c-detail">
+          <div class="c-icon">✉️</div>
+          <div class="c-text"><strong style="color:var(--white);display:block;font-size:.85rem;">Email</strong><a href="mailto:lelabdigital4@gmail.com">lelabdigital4@gmail.com</a></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">💬</div>
+          <div class="c-text"><strong style="color:var(--white);display:block;font-size:.85rem;">WhatsApp</strong><a href="https://wa.me/2290190172296" target="_blank">+229 01 90 17 22 96</a></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">🌍</div>
+          <div class="c-text"><strong style="color:var(--white);display:block;font-size:.85rem;">Zone couverte</strong><span style="color:var(--gray);">Bénin, Sénégal, Afrique de l'Ouest & International</span></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">🕐</div>
+          <div class="c-text"><strong style="color:var(--white);display:block;font-size:.85rem;">Disponibilité</strong><span style="color:var(--gray);">Lun - Sam : 8h00 - 20h00</span></div>
+        </div>
+        <div class="c-socials">
+          <a href="https://wa.me/2290190172296" target="_blank" class="soc-btn">💬</a>
+          <a href="mailto:lelabdigital4@gmail.com" class="soc-btn">✉️</a>
+          <a href="#" class="soc-btn">🔗</a><a href="#" class="soc-btn">📘</a><a href="#" class="soc-btn">📸</a>
+        </div>
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);">
+          <p style="font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:.5rem;">💡 Conseil</p>
+          <p style="font-size:.85rem;">Pour une réponse plus rapide, contactez-nous directement sur WhatsApp. Nous répondons généralement en moins de 2 heures.</p>
+        </div>
+      </div>
+      <div class="slide-right">
+        <div class="form-card">
+          <h3 style="margin-bottom:.5rem;">Envoyez-nous un message</h3>
+          <p style="margin-bottom:1.5rem;font-size:.9rem;">Le formulaire sera envoyé directement via WhatsApp avec toutes vos informations.</p>
+          <div style="margin-bottom:1.2rem;">
+            <label class="form-label" data-i18n="contact_type">Vous êtes un :</label>
+            <div class="type-btns">
+              <button type="button" class="type-btn active" data-type="pro" data-i18n="type_pro">Professionnel</button>
+              <button type="button" class="type-btn" data-type="part" data-i18n="type_part">Particulier</button>
+            </div>
+          </div>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact_name">Nom complet</label>
+                <input type="text" id="cf-name" class="form-input" placeholder="Votre nom complet" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact_phone">Téléphone / WhatsApp</label>
+                <input type="tel" id="cf-phone" class="form-input" placeholder="+229 XX XX XX XX" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="contact_email">Email</label>
+              <input type="email" id="cf-email" class="form-input" placeholder="votre@email.com" required>
+            </div>
+            <div class="form-group svc-opts visible" id="pro-services">
+              <label class="form-label" data-i18n="contact_service">Service souhaité</label>
+              <select id="cf-service" class="form-select" required>
+                <option value="">Sélectionnez un service...</option>
+                <option data-i18n="srv_m">Architecture Monétique</option>
+                <option data-i18n="srv_mk">Stratégie Marketing</option>
+                <option data-i18n="srv_w">Création de Site Web</option>
+                <option data-i18n="srv_f">Formation Le Raccourci</option>
+                <option data-i18n="srv_p">Diagnostic Partenariat</option>
+                <option data-i18n="srv_i">Investigation Stratégique</option>
+              </select>
+            </div>
+            <div class="form-group svc-opts" id="part-services">
+              <label class="form-label">Service souhaité</label>
+              <select class="form-select" onchange="document.getElementById('cf-service').value=this.value">
+                <option value="">Sélectionnez...</option>
+                <option>Stratégie Financière Familiale</option>
+                <option>Gestion de Budget</option>
+                <option>Stratégie d'Épargne</option>
+                <option>Planification d'Avenir</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="contact_message">Votre message</label>
+              <textarea id="cf-message" class="form-textarea" placeholder="Décrivez votre besoin, votre projet, vos objectifs..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">💬 <span data-i18n="contact_send">Envoyer via WhatsApp</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo"><div class="logo-icon">💡</div><span class="logo-text">LeLab<span class="logo-accent">Digital</span></span></a>
+          <p data-i18n="footer_desc">Votre partenaire de transformation digitale en Afrique de l'Ouest.</p>
+          <div class="c-socials" style="margin-top:1.5rem;">
+            <a href="https://wa.me/2290190172296" target="_blank" class="soc-btn">💬</a>
+            <a href="mailto:lelabdigital4@gmail.com" class="soc-btn">✉️</a>
+            <a href="#" class="soc-btn">🔗</a><a href="#" class="soc-btn">📘</a><a href="#" class="soc-btn">📸</a>
+          </div>
+        </div>
+        <div class="footer-col"><h5 data-i18n="footer_links">Liens rapides</h5><div class="f-links"><a href="../index.html">Accueil</a><a href="services.html">Nos Services</a><a href="finance.html">Finance</a><a href="blog.html">Blog</a></div></div>
+        <div class="footer-col"><h5>Services</h5><div class="f-links"><a href="services.html">Architecture Monétique</a><a href="services.html">Stratégie Marketing</a><a href="services.html">Sites Web</a><a href="services.html">Formations</a></div></div>
+        <div class="footer-col"><h5 data-i18n="footer_contact">Contact</h5><div class="f-links"><a href="mailto:lelabdigital4@gmail.com">lelabdigital4@gmail.com</a><a href="https://wa.me/2290190172296">+229 01 90 17 22 96</a><a href="contact.html">Nous contacter</a><a href="settings.html">Paramètres</a></div></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-tagline"><span data-i18n="footer_tagline">Innovation — Clarté — <span style="color:var(--gold)">Solution</span></span></div>
+        <p class="footer-copy">© 2025 LeLabDigital. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/2290190172296" target="_blank" class="wa-float">💬</a></body></html>

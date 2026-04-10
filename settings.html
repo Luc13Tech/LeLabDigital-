@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres | LeLabDigital</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
+</head><body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">💡</div><span class="logo-text">LeLab<span class="logo-accent">Digital</span></span></a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link" data-i18n="nav_home">Accueil</a>
+        <a href="services.html" class="nav-link" data-i18n="nav_services">Nos Services</a>
+        <a href="finance.html" class="nav-link" data-i18n="nav_finance">Finance</a>
+        <a href="blog.html" class="nav-link" data-i18n="nav_blog">Blog</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="settings.html" class="btn btn-ghost btn-sm">⚙️</a>
+        <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login-btn" data-i18n="nav_login">Connexion</a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="nav-register-btn" data-i18n="nav_register">S'inscrire</a>
+        <div class="nav-user" id="nav-logout-btn" style="display:none;"><div class="nav-avatar" id="nav-avatar">U</div><span id="nav-user-name" style="font-size:.85rem;font-weight:600;"></span><button onclick="logout()" class="btn btn-danger btn-sm" data-i18n="nav_logout">Déconnexion</button></div>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('active');">✕</button>
+    <a href="../index.html" class="nav-link">Accueil</a>
+    <a href="services.html" class="nav-link">Nos Services</a>
+    <a href="finance.html" class="nav-link">Finance</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="settings.html" class="nav-link">Paramètres</a>
+    <a href="login.html" class="btn btn-ghost">Connexion</a>
+    <a href="register.html" class="btn btn-primary">S'inscrire</a>
+  </div>
+  <div class="settings-wrap">
+    <div class="container">
+      <div class="section-header text-center fade-in" style="padding-top:2rem;">
+        <h2 data-i18n="settings_title">⚙️ Paramètres</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="settings-card fade-in">
+        <div class="set-section">
+          <h4>🌐 <span data-i18n="settings_lang">Langue</span></h4>
+          <div class="lang-grid">
+            <button class="lang-btn" data-lang="fr"><span class="flag">🇫🇷</span>Français</button>
+            <button class="lang-btn" data-lang="en"><span class="flag">🇬🇧</span>English</button>
+            <button class="lang-btn" data-lang="es"><span class="flag">🇪🇸</span>Español</button>
+            <button class="lang-btn" data-lang="de"><span class="flag">🇩🇪</span>Deutsch</button>
+            <button class="lang-btn" data-lang="ru"><span class="flag">🇷🇺</span>Русский</button>
+          </div>
+        </div>
+        <div class="set-section">
+          <h4>🎨 <span data-i18n="settings_theme">Thème</span></h4>
+          <div class="theme-grid">
+            <button class="theme-btn" data-theme="dark">🌙 <span data-i18n="theme_dark">Sombre</span></button>
+            <button class="theme-btn" data-theme="light">☀️ <span data-i18n="theme_light">Clair</span></button>
+          </div>
+        </div>
+        <div class="set-section">
+          <h4>👤 Mon Compte</h4>
+          <div id="account-info" style="padding:1.5rem;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);"></div>
+        </div>
+        <div class="set-section">
+          <h4>ℹ️ À propos</h4>
+          <p style="font-size:.9rem;">LeLabDigital — Innovation, Clarté, Solution</p>
+          <p style="font-size:.85rem;margin-top:.5rem;">📧 <a href="mailto:lelabdigital4@gmail.com" style="color:var(--cyan);">lelabdigital4@gmail.com</a></p>
+          <p style="font-size:.85rem;margin-top:.3rem;">💬 <a href="https://wa.me/2290190172296" target="_blank" style="color:var(--cyan);">+229 01 90 17 22 96</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const user = getCurrentUser();
+      const info = document.getElementById('account-info');
+      if(user){
+        info.innerHTML = '<p style="color:var(--white);font-weight:600;">👤 ' + user.name + '</p><p style="font-size:.85rem;margin-top:.25rem;">📧 ' + user.email + '</p><button onclick="logout()" class="btn btn-danger btn-sm" style="margin-top:1rem;" data-i18n="nav_logout">Déconnexion</button>';
+      } else {
+        info.innerHTML = '<p>Vous n'êtes pas connecté. <a href="login.html" style="color:var(--cyan);">Se connecter</a> ou <a href="register.html" style="color:var(--cyan);">Créer un compte</a></p>';
+      }
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo"><div class="logo-icon">💡</div><span class="logo-text">LeLab<span class="logo-accent">Digital</span></span></a>
+          <p data-i18n="footer_desc">Votre partenaire de transformation digitale en Afrique de l'Ouest.</p>
+          <div class="c-socials" style="margin-top:1.5rem;">
+            <a href="https://wa.me/2290190172296" target="_blank" class="soc-btn">💬</a>
+            <a href="mailto:lelabdigital4@gmail.com" class="soc-btn">✉️</a>
+            <a href="#" class="soc-btn">🔗</a><a href="#" class="soc-btn">📘</a><a href="#" class="soc-btn">📸</a>
+          </div>
+        </div>
+        <div class="footer-col"><h5 data-i18n="footer_links">Liens rapides</h5><div class="f-links"><a href="../index.html">Accueil</a><a href="services.html">Nos Services</a><a href="finance.html">Finance</a><a href="blog.html">Blog</a></div></div>
+        <div class="footer-col"><h5>Services</h5><div class="f-links"><a href="services.html">Architecture Monétique</a><a href="services.html">Stratégie Marketing</a><a href="services.html">Sites Web</a><a href="services.html">Formations</a></div></div>
+        <div class="footer-col"><h5 data-i18n="footer_contact">Contact</h5><div class="f-links"><a href="mailto:lelabdigital4@gmail.com">lelabdigital4@gmail.com</a><a href="https://wa.me/2290190172296">+229 01 90 17 22 96</a><a href="contact.html">Nous contacter</a><a href="settings.html">Paramètres</a></div></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-tagline"><span data-i18n="footer_tagline">Innovation — Clarté — <span style="color:var(--gold)">Solution</span></span></div>
+        <p class="footer-copy">© 2025 LeLabDigital. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/2290190172296" target="_blank" class="wa-float">💬</a></body></html>

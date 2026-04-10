@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LeLabDigital - Innovation, Clarté et Solutions Digitales pour les entreprises et familles en Afrique de l'Ouest.">
+  <title>Accueil | LeLabDigital</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">💡</div>
+        <span class="logo-text">LeLab<span class="logo-accent">Digital</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a>
+        <a href="pages/services.html" class="nav-link" data-i18n="nav_services">Nos Services</a>
+        <a href="pages/finance.html" class="nav-link" data-i18n="nav_finance">Finance</a>
+        <a href="pages/blog.html" class="nav-link" data-i18n="nav_blog">Blog</a>
+        <a href="pages/contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="pages/settings.html" class="btn btn-ghost btn-sm" title="Paramètres">⚙️</a>
+        <a href="pages/login.html" class="btn btn-ghost btn-sm" id="nav-login-btn" data-i18n="nav_login">Connexion</a>
+        <a href="pages/register.html" class="btn btn-primary btn-sm" id="nav-register-btn" data-i18n="nav_register">S'inscrire</a>
+        <div class="nav-user" id="nav-logout-btn" style="display:none;">
+          <div class="nav-avatar" id="nav-avatar">U</div>
+          <span id="nav-user-name" style="font-size:.85rem;font-weight:600;"></span>
+          <button onclick="logout()" class="btn btn-danger btn-sm" data-i18n="nav_logout">Déconnexion</button>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('active');">✕</button>
+    <a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a>
+    <a href="pages/services.html" class="nav-link" data-i18n="nav_services">Nos Services</a>
+    <a href="pages/finance.html" class="nav-link" data-i18n="nav_finance">Finance</a>
+    <a href="pages/blog.html" class="nav-link" data-i18n="nav_blog">Blog</a>
+    <a href="pages/contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+    <a href="pages/settings.html" class="nav-link" data-i18n="nav_settings">Paramètres</a>
+    <a href="pages/login.html" class="btn btn-ghost" id="mobile-login" data-i18n="nav_login">Connexion</a>
+    <a href="pages/register.html" class="btn btn-primary" data-i18n="nav_register">S'inscrire</a>
+  </div>
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="hero-grid"></div>
+      <canvas id="particles-canvas"></canvas>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge fade-in">
+          <div class="hero-badge-dot"></div>
+          <span>🌍 Afrique de l'Ouest &amp; International</span>
+        </div>
+        <h1 class="fade-in d1">Innovation, <em>Clarté</em> et Solutions<br>Digitales pour tous</h1>
+        <p class="hero-desc fade-in d2" data-i18n="hero_sub">Nous accompagnons les entreprises et les familles vers leur transformation numérique avec expertise et précision.</p>
+        <div class="hero-actions fade-in d3">
+          <a href="pages/contact.html" class="btn btn-primary">📅 <span data-i18n="hero_cta">Réserver un Diagnostic</span></a>
+          <a href="pages/services.html" class="btn btn-outline">✨ <span data-i18n="hero_cta2">Découvrir nos Services</span></a>
+        </div>
+        <div class="hero-stats fade-in d4">
+          <div class="hero-stat">
+            <div class="num">50+</div>
+            <div class="lbl" data-i18n="stat1">Clients satisfaits</div>
+          </div>
+          <div class="hero-line"></div>
+          <div class="hero-stat">
+            <div class="num">6</div>
+            <div class="lbl" data-i18n="stat2">Services digitaux</div>
+          </div>
+          <div class="hero-line"></div>
+          <div class="hero-stat">
+            <div class="num">5+</div>
+            <div class="lbl" data-i18n="stat3">Pays couverts</div>
+          </div>
+          <div class="hero-line"></div>
+          <div class="hero-stat">
+            <div class="num">3+</div>
+            <div class="lbl" data-i18n="stat4">Ans d'expertise</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars section" id="piliers">
+    <div class="container">
+      <div class="section-header text-center fade-in">
+        <span class="badge">Notre ADN</span>
+        <h2 data-i18n="pillars_title">Nos 3 Piliers</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card fade-in d1">
+          <div class="pillar-icon">🚀</div>
+          <h3 data-i18n="p1_t">Innovation</h3>
+          <p data-i18n="p1_d">Des solutions avant-gardistes adaptées aux marchés africains et internationaux.</p>
+        </div>
+        <div class="pillar-card fade-in d2">
+          <div class="pillar-icon">💎</div>
+          <h3 data-i18n="p2_t">Clarté</h3>
+          <p data-i18n="p2_d">Des stratégies lisibles, des résultats mesurables, une communication transparente.</p>
+        </div>
+        <div class="pillar-card fade-in d3">
+          <div class="pillar-icon">🏆</div>
+          <h3 data-i18n="p3_t">Réputation</h3>
+          <p data-i18n="p3_d">Bâtir votre crédibilité digitale pour devenir une référence dans votre secteur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-item slide-up d1">
+        <div class="stat-num"><span class="counter" data-target="50" data-suffix="+">0</span></div>
+        <div class="stat-label" data-i18n="stat1">Clients satisfaits</div>
+      </div>
+      <div class="stat-item slide-up d2">
+        <div class="stat-num"><span class="counter" data-target="6" data-suffix="">0</span></div>
+        <div class="stat-label" data-i18n="stat2">Services digitaux</div>
+      </div>
+      <div class="stat-item slide-up d3">
+        <div class="stat-num"><span class="counter" data-target="5" data-suffix="+">0</span></div>
+        <div class="stat-label" data-i18n="stat3">Pays couverts</div>
+      </div>
+      <div class="stat-item slide-up d4">
+        <div class="stat-num"><span class="counter" data-target="3" data-suffix="+">0</span></div>
+        <div class="stat-label" data-i18n="stat4">Ans d'expertise</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section" id="services" style="background:var(--navy);">
+    <div class="container">
+      <div class="section-header text-center fade-in">
+        <span class="badge">Business</span>
+        <h2 data-i18n="services_title">Nos Solutions Business</h2>
+        <div class="divider"></div>
+        <p data-i18n="services_sub">6 expertises clés pour transformer votre entreprise</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in d1">
+          <div class="srv-icon">💳</div>
+          <div class="srv-num">01</div>
+          <h3 data-i18n="s1_t">Architecture Monétique</h3>
+          <p data-i18n="s1_d">Intégration invisible et sécurisée de flux de paiement pour l'Afrique et l'International.</p>
+          <a href="pages/services.html" class="srv-link" data-i18n="learn_more">En savoir plus →</a>
+        </div>
+        <div class="service-card fade-in d2">
+          <div class="srv-icon">📈</div>
+          <div class="srv-num">02</div>
+          <h3 data-i18n="s2_t">Stratégie Marketing</h3>
+          <p data-i18n="s2_d">Audit de visibilité, plan de croissance et transformation digitale pour votre PME.</p>
+          <a href="pages/services.html" class="srv-link" data-i18n="learn_more">En savoir plus →</a>
+        </div>
+        <div class="service-card fade-in d3">
+          <div class="srv-icon">🌐</div>
+          <div class="srv-num">03</div>
+          <h3 data-i18n="s3_t">Sites Web Stratégiques</h3>
+          <p data-i18n="s3_d">Vitrine, E-commerce, Landing Page, Réservation — des sites conçus pour convertir.</p>
+          <a href="pages/services.html" class="srv-link" data-i18n="learn_more">En savoir plus →</a>
+        </div>
+        <div class="service-card fade-in d4">
+          <div class="srv-icon">⚡</div>
+          <div class="srv-num">04</div>
+          <h3 data-i18n="s4_t">Formations Raccourcies</h3>
+          <p data-i18n="s4_d">La méthode Le Raccourci : maîtrisez Word & PowerPoint en un temps record.</p>
+          <a href="pages/services.html" class="srv-link" data-i18n="learn_more">En savoir plus →</a>
+        </div>
+        <div class="service-card fade-in d5">
+          <div class="srv-icon">🤝</div>
+          <div class="srv-num">05</div>
+          <h3 data-i18n="s5_t">Diagnostic Partenariat</h3>
+          <p data-i18n="s5_d">Matchmaking expert : nous connectons votre besoin avec la ressource idéale.</p>
+          <a href="pages/services.html" class="srv-link" data-i18n="learn_more">En savoir plus →</a>
+        </div>
+        <div class="service-card fade-in d6">
+          <div class="srv-icon">🔍</div>
+          <div class="srv-num">06</div>
+          <h3 data-i18n="s6_t">Investigation Stratégique</h3>
+          <p data-i18n="s6_d">Analyse de marché en Afrique de l'Ouest, identification d'opportunités.</p>
+          <a href="pages/services.html" class="srv-link" data-i18n="learn_more">En savoir plus →</a>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:3rem;">
+        <a href="pages/services.html" class="btn btn-primary">Voir tous nos services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCE SECTION -->
+  <section class="finance section" id="finance">
+    <div class="container finance-inner">
+      <div class="slide-left">
+        <div class="fin-label">💛 Particuliers &amp; Familles</div>
+        <h2 data-i18n="finance_title">Stratégie Financière Familiale</h2>
+        <p style="margin:1rem 0 1.5rem;" data-i18n="finance_desc">Parce que la prospérité commence à la maison. Nous vous aidons à structurer votre budget, à épargner intelligemment et à planifier votre avenir avec sérénité.</p>
+        <a href="pages/finance.html" class="btn btn-gold">🌟 Découvrir cette offre</a>
+      </div>
+      <div class="finance-cards slide-right">
+        <div class="finance-card">
+          <div class="fin-card-icon">💰</div>
+          <div>
+            <h4 data-i18n="f1_t">Gestion de Budget</h4>
+            <p data-i18n="f1_d">Analysez vos revenus et dépenses pour reprendre le contrôle de vos finances.</p>
+          </div>
+        </div>
+        <div class="finance-card">
+          <div class="fin-card-icon">🏦</div>
+          <div>
+            <h4 data-i18n="f2_t">Stratégie d'Épargne</h4>
+            <p data-i18n="f2_d">Construire une épargne solide et adaptée à vos objectifs de vie.</p>
+          </div>
+        </div>
+        <div class="finance-card">
+          <div class="fin-card-icon">🌱</div>
+          <div>
+            <h4 data-i18n="f3_t">Planification d'Avenir</h4>
+            <p data-i18n="f3_d">Préparez les études, la retraite, les projets familiaux avec une vision à long terme.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="section-header text-center fade-in">
+        <span class="badge">FAQ</span>
+        <h2 data-i18n="faq_title">Questions Fréquentes</h2>
+        <div class="divider"></div>
+        <p data-i18n="faq_sub">Tout ce que vous devez savoir sur LeLabDigital</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item fade-in d1">
+          <div class="faq-question">
+            <h4 data-i18n="faq1_q">Quels types d'entreprises accompagnez-vous ?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer"><p data-i18n="faq1_a">Nous accompagnons les PME, les entrepreneurs...</p></div>
+        </div>
+        <div class="faq-item fade-in d2">
+          <div class="faq-question">
+            <h4 data-i18n="faq2_q">Comment se déroule un diagnostic de partenariat ?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer"><p data-i18n="faq2_a">Le processus est en 3 étapes...</p></div>
+        </div>
+        <div class="faq-item fade-in d3">
+          <div class="faq-question">
+            <h4 data-i18n="faq3_q">Combien coûtent les formations Le Raccourci ?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer"><p data-i18n="faq3_a">Nos formations sont accessibles...</p></div>
+        </div>
+        <div class="faq-item fade-in d4">
+          <div class="faq-question">
+            <h4 data-i18n="faq4_q">Proposez-vous des solutions pour les particuliers ?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer"><p data-i18n="faq4_a">Oui ! Notre section Stratégie Financière...</p></div>
+        </div>
+        <div class="faq-item fade-in d5">
+          <div class="faq-question">
+            <h4 data-i18n="faq5_q">Quels systèmes de paiement intégrez-vous ?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer"><p data-i18n="faq5_a">Nous travaillons avec FedaPay, CinetPay...</p></div>
+        </div>
+        <div class="faq-item fade-in d6">
+          <div class="faq-question">
+            <h4 data-i18n="faq6_q">Quel est le délai de réalisation d'un site web ?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer"><p data-i18n="faq6_a">Un site vitrine est livré en 5-7 jours...</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PREVIEW -->
+  <section class="section" id="contact" style="background:var(--blue);">
+    <div class="container text-center fade-in">
+      <span class="badge">Contactez-nous</span>
+      <h2 style="margin:.75rem 0 1rem;">Prêt à transformer votre activité ?</h2>
+      <p style="max-width:500px;margin:0 auto 2rem;">Réservez votre diagnostic gratuit et discutons de votre projet sur WhatsApp dès aujourd'hui.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="pages/contact.html" class="btn btn-primary">📋 Remplir le formulaire</a>
+        <a href="https://wa.me/2290190172296" target="_blank" class="btn btn-outline">💬 WhatsApp direct</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">💡</div>
+            <span class="logo-text">LeLab<span class="logo-accent">Digital</span></span>
+          </a>
+          <p data-i18n="footer_desc">Votre partenaire de transformation digitale en Afrique de l'Ouest.</p>
+          <div class="c-socials" style="margin-top:1.5rem;">
+            <a href="https://wa.me/2290190172296" target="_blank" class="soc-btn" title="WhatsApp">💬</a>
+            <a href="mailto:lelabdigital4@gmail.com" class="soc-btn" title="Email">✉️</a>
+            <a href="#" class="soc-btn" title="LinkedIn">🔗</a>
+            <a href="#" class="soc-btn" title="Facebook">📘</a>
+            <a href="#" class="soc-btn" title="Instagram">📸</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_links">Liens rapides</h5>
+          <div class="f-links">
+            <a href="index.html" data-i18n="nav_home">Accueil</a>
+            <a href="pages/services.html" data-i18n="nav_services">Nos Services</a>
+            <a href="pages/finance.html" data-i18n="nav_finance">Finance</a>
+            <a href="pages/blog.html" data-i18n="nav_blog">Blog</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <div class="f-links">
+            <a href="pages/services.html">Architecture Monétique</a>
+            <a href="pages/services.html">Stratégie Marketing</a>
+            <a href="pages/services.html">Sites Web</a>
+            <a href="pages/services.html">Formations</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_contact">Contact</h5>
+          <div class="f-links">
+            <a href="mailto:lelabdigital4@gmail.com">lelabdigital4@gmail.com</a>
+            <a href="https://wa.me/2290190172296">+229 01 90 17 22 96</a>
+            <a href="pages/contact.html">Nous contacter</a>
+            <a href="pages/settings.html" data-i18n="nav_settings">Paramètres</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-tagline"><span data-i18n="footer_tagline">Innovation — Clarté — <span style="color:var(--gold)">Solution</span></span></div>
+        <p class="footer-copy">© 2025 LeLabDigital. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/2290190172296" target="_blank" class="wa-float" title="WhatsApp">💬</a>
+</body>
+</html>

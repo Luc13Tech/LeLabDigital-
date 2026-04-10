@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Services | LeLabDigital</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">💡</div>
+        <span class="logo-text">LeLab<span class="logo-accent">Digital</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link" data-i18n="nav_home">Accueil</a>
+        <a href="services.html" class="nav-link" data-i18n="nav_services">Nos Services</a>
+        <a href="finance.html" class="nav-link" data-i18n="nav_finance">Finance</a>
+        <a href="blog.html" class="nav-link" data-i18n="nav_blog">Blog</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="settings.html" class="btn btn-ghost btn-sm" title="Paramètres">⚙️</a>
+        <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login-btn" data-i18n="nav_login">Connexion</a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="nav-register-btn" data-i18n="nav_register">S'inscrire</a>
+        <div class="nav-user" id="nav-logout-btn" style="display:none;">
+          <div class="nav-avatar" id="nav-avatar">U</div>
+          <span id="nav-user-name" style="font-size:.85rem;font-weight:600;"></span>
+          <button onclick="logout()" class="btn btn-danger btn-sm" data-i18n="nav_logout">Déconnexion</button>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('active');">✕</button>
+    <a href="../index.html" class="nav-link" data-i18n="nav_home">Accueil</a>
+    <a href="services.html" class="nav-link" data-i18n="nav_services">Nos Services</a>
+    <a href="finance.html" class="nav-link" data-i18n="nav_finance">Finance</a>
+    <a href="blog.html" class="nav-link" data-i18n="nav_blog">Blog</a>
+    <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+    <a href="settings.html" class="nav-link" data-i18n="nav_settings">Paramètres</a>
+    <a href="login.html" class="btn btn-ghost" data-i18n="nav_login">Connexion</a>
+    <a href="register.html" class="btn btn-primary" data-i18n="nav_register">S'inscrire</a>
+  </div>
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">Expertise</span>
+      <h1 style="margin:.75rem 0 1rem;">Nos <em style="font-style:normal;color:var(--cyan)">Solutions</em> Business</h1>
+      <p>6 expertises clés conçues pour transformer votre entreprise et accélérer votre croissance digitale en Afrique et au-delà.</p>
+    </div>
+  </section>
+  <section class="section" style="background:var(--navy);">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+        <div class="srv-detail fade-in d1">
+          <div class="srv-detail-hdr">
+            <div class="srv-detail-ico">💳</div>
+            <div class="srv-detail-body">
+              <div class="srv-num">01</div>
+              <h3 data-i18n="s1_t">Architecture Monétique</h3>
+              <p>Profitez de notre expertise en monétique pour intégrer les meilleures solutions de paiement adaptées à votre marché. Nous configurons tout en coulisses : FedaPay, CinetPay, Wave, Orange Money, MTN MoMo — sans que vous ayez à comprendre la technique. Une intégration invisible et parfaitement sécurisée.</p>
+              <div class="srv-detail-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">💬 Demander un devis</a>
+                <a href="https://wa.me/2290190172296" target="_blank" class="btn btn-ghost btn-sm" style="margin-left:.75rem;">📲 WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="srv-detail fade-in d2">
+          <div class="srv-detail-hdr">
+            <div class="srv-detail-ico">📈</div>
+            <div class="srv-detail-body">
+              <div class="srv-num">02</div>
+              <h3 data-i18n="s2_t">Stratégie Marketing & Audit de Visibilité</h3>
+              <p>Nous analysons votre présence digitale, repérons les failles et les stratégies non exploitées, puis proposons des solutions concrètes. Notre approche : <em>"Voici où vous en êtes, voici ce que vous ne faites pas encore, voici la solution."</em> Plan de croissance personnalisé inclus.</p>
+              <div class="srv-detail-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">💬 Demander un audit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="srv-detail fade-in d3">
+          <div class="srv-detail-hdr">
+            <div class="srv-detail-ico">🌐</div>
+            <div class="srv-detail-body">
+              <div class="srv-num">03</div>
+              <h3 data-i18n="s3_t">Création de Sites Web Stratégiques</h3>
+              <p>Du site vitrine au LMS en passant par l'e-commerce et les landing pages — chaque site est conçu pour convertir. Nous réalisons : <strong>Sites Vitrine</strong> (carte de visite numérique), <strong>E-commerce</strong> (boutique en ligne), <strong>Landing Page</strong> (une seule action précise), <strong>Site de Réservation</strong>, <strong>Portfolio</strong>, <strong>Blog</strong>, <strong>Espace Membre / LMS</strong>.</p>
+              <div class="srv-detail-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">🖥️ Créer mon site</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="srv-detail fade-in d4">
+          <div class="srv-detail-hdr">
+            <div class="srv-detail-ico">⚡</div>
+            <div class="srv-detail-body">
+              <div class="srv-num">04</div>
+              <h3 data-i18n="s4_t">Formations Raccourcies — La Méthode du Raccourci</h3>
+              <p>Le concept : <em>"Ne passez pas 10 heures sur Word, passez-en 10 minutes."</em> Nos formations intensives sur Word et PowerPoint vous donnent accès aux scripts vidéos et aux techniques d'efficacité bureautique. Idéal pour les professionnels, consultants et PME qui veulent gagner du temps immédiatement.</p>
+              <div class="srv-detail-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">⚡ S'inscrire à la formation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="srv-detail fade-in d5">
+          <div class="srv-detail-hdr">
+            <div class="srv-detail-ico">🤝</div>
+            <div class="srv-detail-body">
+              <div class="srv-num">05</div>
+              <h3 data-i18n="s5_t">Diagnostic Partenariat & Matchmaking</h3>
+              <p>Nous jouons le rôle de <strong>Match Maker Stratégique</strong> pour résoudre les problèmes de ressources de votre PME. Le processus : <strong>1. Investigation</strong> — analyse du besoin réel en profondeur. <strong>2. Recherche</strong> — exploration du réseau et de la base de données. <strong>3. Mise en relation</strong> — connexion officielle avec le partenaire idéal. Modèle économique : frais fixes d'investigation + commission sur la mise en relation.</p>
+              <div class="srv-detail-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">🔍 Démarrer le diagnostic</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="srv-detail fade-in d6">
+          <div class="srv-detail-hdr">
+            <div class="srv-detail-ico">🗺️</div>
+            <div class="srv-detail-body">
+              <div class="srv-num">06</div>
+              <h3 data-i18n="s6_t">Investigation Stratégique — Marché Afrique de l'Ouest</h3>
+              <p>Analyse approfondie du marché ouest-africain : identification d'opportunités, étude de la concurrence, conseils de positionnement, segmentation des cibles. Un service précieux pour les entreprises qui veulent s'implanter ou se développer en Afrique de l'Ouest (Bénin, Sénégal, Côte d'Ivoire, Ghana, Nigeria…).</p>
+              <div class="srv-detail-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">📊 Demander une étude</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-icon">💡</div>
+            <span class="logo-text">LeLab<span class="logo-accent">Digital</span></span>
+          </a>
+          <p data-i18n="footer_desc">Votre partenaire de transformation digitale en Afrique de l'Ouest.</p>
+          <div class="c-socials" style="margin-top:1.5rem;">
+            <a href="https://wa.me/2290190172296" target="_blank" class="soc-btn">💬</a>
+            <a href="mailto:lelabdigital4@gmail.com" class="soc-btn">✉️</a>
+            <a href="#" class="soc-btn">🔗</a>
+            <a href="#" class="soc-btn">📘</a>
+            <a href="#" class="soc-btn">📸</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_links">Liens rapides</h5>
+          <div class="f-links">
+            <a href="../index.html" data-i18n="nav_home">Accueil</a>
+            <a href="services.html" data-i18n="nav_services">Nos Services</a>
+            <a href="finance.html" data-i18n="nav_finance">Finance</a>
+            <a href="blog.html" data-i18n="nav_blog">Blog</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <div class="f-links">
+            <a href="services.html">Architecture Monétique</a>
+            <a href="services.html">Stratégie Marketing</a>
+            <a href="services.html">Sites Web</a>
+            <a href="services.html">Formations</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_contact">Contact</h5>
+          <div class="f-links">
+            <a href="mailto:lelabdigital4@gmail.com">lelabdigital4@gmail.com</a>
+            <a href="https://wa.me/2290190172296">+229 01 90 17 22 96</a>
+            <a href="contact.html">Nous contacter</a>
+            <a href="settings.html" data-i18n="nav_settings">Paramètres</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-tagline"><span data-i18n="footer_tagline">Innovation — Clarté — <span style="color:var(--gold)">Solution</span></span></div>
+        <p class="footer-copy">© 2025 LeLabDigital. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/2290190172296" target="_blank" class="wa-float">💬</a>
+</body></html>
